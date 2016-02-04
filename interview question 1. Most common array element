@@ -1,0 +1,26 @@
+//Interview Question 1: get the most common element out of this array
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main () 
+{
+	 map<int elementNum, int numOccurrences> mapName;
+
+	int[] a = new int[10]{1,2,3,4,5,6,7,7,7,7};
+	for (int i = a.length; i >= 0; i--)
+	{
+		//if mapName with key of the value a[i]
+		if (mapName[a[i]])
+		{
+			//++ preincrement is more efficient than post
+			++mapName[a[i]];
+		}
+		else
+		{
+			mapName[a[i]] = 1;
+		}
+	}
+	cout << mapName;
+}
